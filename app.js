@@ -20,21 +20,18 @@ app.post('/living', (req, res) => {
             deployliving((error, stdout, stderr) => {
                 if (error) {
                     console.error('Error al ejecutar el comando de despliegue:', error);
-                    return   res.status(500).send('Error al ejecutar el comando de despliegue.');
                 } else {
                     console.log('Despliegue exitoso:', stdout);
-                    return res.status(200).send('Webhook recibido correctamente.');
                 }
             });
 
             break;
         default:
             console.log(ref)
-            return res.status(400).end()
     }
 
-
-    return res.status(400).end()
+    res.end()
+    
 });
 
 const deployliving = (callback) => {
