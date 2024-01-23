@@ -10,6 +10,8 @@ app.use(bodyParser.json());
 
 
 app.post('/living', (req, res) => {
+    
+    console.log("Push Detectado")
 
     const { ref } = req.body
 
