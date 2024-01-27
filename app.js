@@ -35,7 +35,7 @@ app.post('/living', (req, res) => {
 });
 
 const deployliving = (callback) => {
-    exec('cd /root/living && git pull && pnpm install && pm2 restart living', callback);
+    exec('cd /root/living && git reset --hard && git pull && pnpm install && pm2 restart living', callback);
 }
 
 
